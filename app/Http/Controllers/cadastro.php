@@ -52,4 +52,29 @@ class cadastro extends Controller
         
     }
 
+    public function deleteUser(Request $req) {
+
+        $userId = $req->userId;
+
+
+        //$user = User::find($req->user_id);
+        Auth::logout();
+         
+        $req->session()->invalidate();
+         
+        $req->session()->regenerateToken();
+        //$user->delete();
+
+        $delete= User::destroy($userId);
+
+        if($delete) {
+        
+            return redirect('/')->with('success', 'Usuário deletado com sucesso.');
+
+        } else {
+            return redirect('/index')->with('error', 'Erro ao deletar usuário.');
+        } 
+
+    }
+
 }

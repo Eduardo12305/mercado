@@ -34,6 +34,7 @@ return [
 
     'lifetime' => env('SESSION_LIFETIME', 120),
 
+    //definir como true depois para a sessao encerrar ao fechar a janela
     'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
 
     /*

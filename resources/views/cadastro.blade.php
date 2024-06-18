@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tela de Casdastro</title>
 </head>
 <body>
-    @if(isset($error))
-    <p>ddeu ruim</p>
-
-    @endif
 <form method="POST" action="{{route("ca-post")}}"> 
     @csrf                       
         <label for="nome">Nome</label>
@@ -20,5 +16,6 @@
         <input name="email" type="email" id="email">
         <input name="enviar" type="submit">
     </form>
+
 </body>
 </html>

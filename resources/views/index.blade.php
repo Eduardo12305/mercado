@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/index.css">
 
-    <title>Index</title>
+    <style>
+        /* CSS para posicionar o dropdown à direita */
+        .dropdown-menu-right {
+            right: 0;
+            left: auto !important;
+        }
+    </style>
+
+    <title>Amazonflix</title>
 </head>
 <body>
-    pagina index
+<div class="container mt-5">
+        <h1 class="mb-4">Pagina index</h1>
 
-    <form action="{{route('logout')}}" method="get">
-        <button class="botao" type="submit" style="color: white;">logout</button>
-    </form>
+        <!-- Incluir o dropdown -->
+        @include('dropdown')
+
+        <hr>
+
+        <!-- Conteúdo da página -->
+        
 
     <div>
-        <a href="{{route('eletronico')}}">
-            <button type="button">Eletrônico</button>
-        </a>
-    </div>
-    <a href="{{route('config')}}">
-        <button type="buttobn">Configuração</button>
+    <a href="{{route('filmes')}}">
+        <button type="button">Filmes</button>
     </a>
+    </div>
 
-    
 
+</div>
 </body>
 </html>
