@@ -16,7 +16,7 @@ class MoviesController extends Controller
 
     public function postMovies(Request $request)
     {
-        // dd($request);
+
         // Se a validação falhar, o Laravel redirecionará automaticamente com os erros de validação
 
         $movie = new Movies;
