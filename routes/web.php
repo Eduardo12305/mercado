@@ -12,3 +12,5 @@ Route::get('/filmes', [MoviesController::class,'getGenresAndMovies'])->name('fil
 Route::view('/configuracao','configuracao')->name('config')->middleware('auth:web');
 
 Route::post('/filmes', [MoviesController::class,'postMovies'])->name('enviarMovies')->middleware('auth:web');
+
+Route::view('','')->name('testw')->middleware('');
