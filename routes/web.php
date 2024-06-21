@@ -13,4 +13,4 @@ Route::view('/configuracao','configuracao')->name('config')->middleware('auth:we
 
 Route::post('/filmes', [MoviesController::class,'postMovies'])->name('enviarMovies')->middleware('auth:web');
 
-Route::view('dsfsd','')->name('testw')->middleware('');
+Route::view('dsfsd','dfsdfsd')->name('testw')->middleware('');
