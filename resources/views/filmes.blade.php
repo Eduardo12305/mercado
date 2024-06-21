@@ -6,9 +6,30 @@
     <title>Document</title>
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        @foreach ($filmes as $filme)
+        <div class="col-md-4 mb-4">
+            <div class="card movie-card">
+                <a href="https://google.com" >
+                    <img src="{{ asset("storage/img/".$filme->picture)}}" class="card-img-top" alt="{{ $filme->name }}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ $filme->name }}</h5>
+                    <p class="card-text">Descrição: {{ $filme->description }}</p>
+                    <p class="card-text">Data de Lançamento: {{ $filme->released }}</p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+
+            
     <!-- Modal -->
 <div class="modal fade" id="createMovieModal" tabindex="-1" role="dialog" aria-labelledby="createMovieModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -19,7 +40,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{route('enviarMovies')}}">
+            <form method="POST" action="{{route('enviarMovies')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -30,6 +51,7 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                     </div>
+                    
                     <div class="form-group">
                         <label for="released">Released Date and Time</label>
                         <input type="datetime-local" class="form-control" id="released" name="released" required>
@@ -45,12 +67,18 @@
 
                         </select>
                     </div>
+                    <div class="form-group">
+                            <label for="UploadImg">Adicionar Imagem</label>
+                            <input id="UploadImg" name="picture" type="file" accept="image/*">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
+
+            
            
         </div>
     </div>

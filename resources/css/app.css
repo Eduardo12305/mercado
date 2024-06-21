@@ -1,0 +1,30 @@
+/* public/css/styles.css */
+
+/* Estilo para o corpo da página */
+body {
+    padding: 20px; /* Espaçamento interno para melhorar o espaçamento entre os elementos */
+}
+
+/* Estilo para o modal */
+.modal-body {
+    padding: 20px; /* Espaçamento interno do corpo do modal */
+}
+
+/* Estilo para os botões no modal */
+.modal-footer button {
+    margin-left: 10px; /* Margem esquerda entre os botões no rodapé do modal */
+}
+
+/* Estilo para o botão "Create Movie" */
+.btn-create-movie {
+    margin-bottom: 20px; /* Margem inferior para espaçamento entre o botão e a lista de filmes */
+}
+
+/* Estilo para os filmes listados */
+.filme {
+    margin-bottom: 30px; /* Margem inferior para espaçamento entre os filmes listados */
+    padding: 15px;
+    background-color: #f8f9fa; /* Cor de fundo para destacar cada filme */
+    border: 1px solid #dee2e6; /* Borda fina ao redor de cada filme */
+    border-radius: 5px; /* Borda arredondada */
+}

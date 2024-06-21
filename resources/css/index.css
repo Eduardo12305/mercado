@@ -1,6 +1,7 @@
 /* Adicione este estilo ao seu arquivo CSS */
 
 .movie-card {
+    background-color: red;
     max-width: 300px; /* Defina o máximo de largura desejada para o card do filme */
     margin: 0 auto; /* Centraliza o card horizontalmente */
 }

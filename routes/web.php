@@ -7,7 +7,7 @@ Route::view('/index','index')->name('index')->middleware('auth:web');
 
 //Route::view('/filmes','filmes')->name('filmes')->middleware('auth:web');
 
-Route::get('/filmes', [MoviesController::class,'getGenres'])->name('filmes')->middleware('auth:web');
+Route::get('/filmes', [MoviesController::class,'getGenresAndMovies'])->name('filmes')->middleware('auth:web');
 
 Route::view('/configuracao','configuracao')->name('config')->middleware('auth:web');
 

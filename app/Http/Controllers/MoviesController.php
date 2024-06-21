@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Movies;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage; 
 class MoviesController extends Controller
 {
-    public function getGenres()
+    public function getGenresAndMovies()
     {
         $generos = Genre::all();
-        return view("filmes", ['generos' => $generos]);
+        $filmes = Movies::all();
+        //dd($filmes[3]->picture);
+        return view("filmes", [
+            'generos' => $generos,
+            'filmes'=> $filmes
+    ]);
     }
 
     public function postMovies(Request $request)
@@ -22,14 +27,27 @@ class MoviesController extends Controller
         $movie = new Movies;
         $movie->name = $request->input('name');
         $movie->description = $request->input('description');
-        $movie->picture='14';
+        //$movie->picture='14';
         $movie->released = $request->input('released');
         $movie->genreId = $request->input('genre_id'); // Ajustado para 'genreId'
+
+        if ($request->hasFile('picture')) {
+            $fileName = basename(Storage::put("/public/img/", $request->file('picture')));
+            //dd($path); // Salva na pasta 'storage/app/public/movies'
+            $movie->picture = $fileName;
+        }
+        
         $movie->save();
 
         // Debugging para verificar se o filme foi salvo corretamente
        
 
         return redirect()->route('filmes')->with('success', 'Movie created successfully.');
+    }
+
+    public function getMovies(Request $request) {
+        $filmes = Movies::all();
+
+        return view('', [''=> $filmes]);
     }
 }
