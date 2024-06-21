@@ -21,7 +21,7 @@
                     <h5 class="card-title">{{ $filme->name }}</h5>
                     <p class="card-text">Descrição: {{ $filme->description }}</p>
                     <p class="card-text">Data de Lançamento: {{ $filme->released }}</p>
-                </div>
+                </div> 
             </div>
         </div>
         @endforeach
