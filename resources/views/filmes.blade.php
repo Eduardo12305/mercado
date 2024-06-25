@@ -14,7 +14,7 @@
         @foreach ($filmes as $filme)
         <div class="col-md-4 mb-4">
             <div class="card movie-card">
-                <a href="https://google.com" >
+                <a href="{{ route('filme.show', ['id' => $filme->id]) }}">
                     <img src="{{ asset("storage/img/".$filme->picture)}}" class="card-img-top" alt="{{ $filme->name }}">
                 </a>
                 <div class="card-body">
@@ -27,6 +27,7 @@
         @endforeach
     </div>
 </div>
+
 
 
             

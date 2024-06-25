@@ -50,4 +50,11 @@ class MoviesController extends Controller
 
         return view('', [''=> $filmes]);
     }
+    public function index(Request $request){
+        $movieId = $request->id;
+        $movie = Movies::find($movieId);
+        return view('exibirFilmes',['filme'=>$movie]);
+    }
+
+
 }
